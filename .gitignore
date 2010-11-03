@@ -1,0 +1,7 @@
+pkg/*
+*.gem
+.bundle
+netzke-core
+netzke-basepack
+extjs
+*.sqlite3

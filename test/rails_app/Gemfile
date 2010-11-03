@@ -1,0 +1,30 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.0.1'
+
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+gem 'sqlite3-ruby', :require => 'sqlite3'
+
+gem 'devise'
+
+group :development, :test do
+  gem 'capybara'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'rspec-rails', "~> 2.0.0"
+  gem 'spork'
+  gem 'launchy'    # So you can do Then show me the page
+  gem 'factory_girl'
+end
+
+group :development do
+  gem 'mysql2'
+end
+
+group :test do
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'pickle'
+  gem 'database_cleaner', :git => 'http://github.com/bmabey/database_cleaner.git'
+end

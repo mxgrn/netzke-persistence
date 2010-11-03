@@ -1,0 +1,8 @@
+Description:
+    Generates files needed for persistence to work
+
+Example:
+    rails generate netzke:persistence
+
+    This will create:
+        a migration for the NetzkeComponentState model
