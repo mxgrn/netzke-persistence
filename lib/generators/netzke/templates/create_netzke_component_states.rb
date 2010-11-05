@@ -8,7 +8,7 @@ class CreateNetzkeComponentStates < ActiveRecord::Migration
 
       t.timestamps
     end
-    
+
     add_index :netzke_component_states, :component
     add_index :netzke_component_states, :user_id
     add_index :netzke_component_states, :role_id

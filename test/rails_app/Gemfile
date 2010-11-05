@@ -9,6 +9,8 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'devise'
 
+gem 'netzke-core', :git => "git://github.com/skozlov/netzke-core.git"
+
 group :development, :test do
   gem 'capybara'
   gem 'cucumber-rails'
@@ -26,5 +28,5 @@ end
 group :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'pickle'
-  gem 'database_cleaner', :git => 'http://github.com/bmabey/database_cleaner.git'
+  gem 'database_cleaner'
 end

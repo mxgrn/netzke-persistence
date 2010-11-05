@@ -1,8 +1,9 @@
 GIT
-  remote: http://github.com/bmabey/database_cleaner.git
-  revision: 7ae276d327354940cc70158f4d34d5e38559f459
+  remote: git://github.com/skozlov/netzke-core.git
+  revision: c153f4e01098429f988775b2ade5603de14facf0
   specs:
-    database_cleaner (0.6.0)
+    netzke-core (0.6.4)
+      activesupport (>= 3.0.1)
 
 GEM
   remote: http://rubygems.org/
@@ -60,6 +61,7 @@ GEM
     cucumber-rails (0.3.2)
       cucumber (>= 0.8.0)
     culerity (0.2.12)
+    database_cleaner (0.6.0)
     devise (1.1.2)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
@@ -149,11 +151,12 @@ DEPENDENCIES
   capybara
   cucumber
   cucumber-rails
-  database_cleaner!
+  database_cleaner
   devise
   factory_girl
   launchy
   mysql2
+  netzke-core!
   pickle
   rails (= 3.0.1)
   rspec-rails (~> 2.0.0)
