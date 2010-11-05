@@ -1,17 +1,18 @@
-# An emplementation of a component state manager with support for world/role/user-level masquerading.
-#
-# == Assumptions
-#
-# * Before calling anything else, the "init" class method gets called.
-# The hash must be passed with the following keys:
+# An emplementation of a state manager with a support for world/role/user-level masquerading.
+# You can simply replace it with your own (e.g. you may not like ActiveRecord, or have different needs for masquerading),
+# as long as it implements the following class-methods:
+# * +init+ - gets called before anything else, and accepts a hash with the following keys:
 #   * +component+ should be set to component's persistence key (e.g. Netzke::Base#global_id)
 #   * +current_user+ should be set to the current user object
 #   * +session+ should be set to the controller's session
+# * +state+ - returns the persistent state (a hash) for the component specified with the +init+ call
+# * +update_state+ - accepts a hash, that should get merged with the current +state+
 #
+# == Assumptions
+# This particular implementation assumes the following:
+# * ActiveRecord as ORM
 # * Current user belong_to Role
-#
 # * User#id is user's primary key
-#
 # * session[:masquerade_as] is a hash:
 #   {:world => true} # to masquerade as World
 #   {:role_id => some_role_id} # to masquerade as a role
