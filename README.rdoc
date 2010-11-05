@@ -16,7 +16,7 @@ From your app directory run:
 
 Refer to http://api.netzke.org/core/Netzke/State.html
 
-For an example, see ComponentWithPersistence in +test/rails_app/app/components+.
+For an example, see ComponentWithPersistence in test/rails_app/app/components.
 
 == Running tests
 
