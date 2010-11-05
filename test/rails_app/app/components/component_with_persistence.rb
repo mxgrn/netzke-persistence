@@ -1,6 +1,6 @@
 class ComponentWithPersistence < Netzke::Base
   config :default, {
-    :persistence => true,
+    :persistence => true, # enable persistence!
     :title => "Default title"
   }
 
