@@ -1,6 +1,18 @@
 = netzke-persistence
 
-A drop-in gem to enable persistence in Netzke components.
+Enables persistence in Netzke components.
+
+The following components currently support persistence:
+* Basepack::BorderLayoutPanel - remembers its region sizes, as well as collapsed/expanded states
+
+In the works:
+* Basepack::Window - remembers its dimensions and position
+* BasicApp::GridPanel - remembers:
+  * columns' sizes, order, and hidden/shown state
+  * presets for advanced search
+* Basepack::TabPanel - remembers its last active tab
+* Basepack::AccordionPanel - remembers its panels states
+* Basepack::BasicApp - remembers its last loaded component
 
 == Installation
 
@@ -14,13 +26,15 @@ From your app directory run:
 
 == Usage
 
-Refer to http://api.netzke.org/core/Netzke/State.html
+To enable persistence for a specific component, set its +persistence+ configuration option to +true+, e.g.:
 
-For an example, see ComponentWithPersistence in test/rails_app/app/components.
+    <%= netzke :my_component, :persistence => true %>
+
+Component developers may refer to http://api.netzke.org/core/Netzke/State.html. For an example, see ComponentWithPersistence in test/rails_app/app/components.
 
 == Running tests
 
-Sym-link Ext JS library into the test app, e.g. (depends on where your Ext JS is located):
+Symlink the Ext JS library into the test app, e.g. (depends on where your Ext JS is located):
 
     ln -s ~/code/sencha/ext-3.3.0 test/rails_app/public/extjs
 
@@ -28,11 +42,11 @@ Run bundle install from inside the test app:
 
     cd test/rails_app && bundle install && cd -
 
-To run cucumber tests:
+Running cucumber tests:
 
     cucumber features
 
-To run RSpec tests:
+RSpec tests:
 
     rspec spec
 

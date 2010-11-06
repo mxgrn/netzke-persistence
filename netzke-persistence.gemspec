@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sergei Kozlov"]
-  s.date = %q{2010-11-05}
+  s.date = %q{2010-11-06}
   s.description = %q{A drop-in gem to enable persistence in Netzke components}
   s.email = %q{sergei@playcode.nl}
   s.extra_rdoc_files = [
@@ -94,7 +94,8 @@ Gem::Specification.new do |s|
     "test/rails_app/public/500.html",
     "test/rails_app/public/favicon.ico",
     "test/rails_app/public/images/rails.png",
-    "test/rails_app/public/robots.txt"
+    "test/rails_app/public/robots.txt",
+    "test/rails_app/script/rails"
   ]
   s.homepage = %q{http://netzke.org}
   s.post_install_message = %q{
