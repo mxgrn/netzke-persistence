@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{netzke-persistence}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sergei Kozlov"]
@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
+    "CHANGELOG.rdoc",
     "README.rdoc",
     "Rakefile",
     "app/models/netzke_component_state.rb",
