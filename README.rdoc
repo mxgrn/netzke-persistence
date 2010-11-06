@@ -7,8 +7,8 @@ The following components currently support persistence:
 
 In the works:
 * Basepack::Window - remembers its dimensions and position
-* BasicApp::GridPanel - remembers:
-  * columns' sizes, order, and hidden/shown state
+* Basepack::GridPanel - remembers:
+  * columns sizes, order, and hidden/shown state
   * presets for advanced search
 * Basepack::TabPanel - remembers its last active tab
 * Basepack::AccordionPanel - remembers its panels states
