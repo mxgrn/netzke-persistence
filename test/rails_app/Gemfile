@@ -9,7 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'devise'
 
-gem 'netzke-core', :git => "git://github.com/skozlov/netzke-core.git"
+gem 'netzke-core'
 
 group :development, :test do
   gem 'capybara'
