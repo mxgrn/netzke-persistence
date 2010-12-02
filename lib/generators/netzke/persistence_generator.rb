@@ -1,6 +1,6 @@
 module Netzke
-  class PersistenceGenerator < Rails::Generators::Base
-    include Rails::Generators::Migration
+  class PersistenceGenerator < ::Rails::Generators::Base
+    include ::Rails::Generators::Migration
     
     source_root File.expand_path('../templates', __FILE__)
 
