@@ -7,6 +7,7 @@ class ComponentWithPersistence < Netzke::Base
   action :change_title
   action :set_original_title
 
+  js_property :height, 400
   js_property :bbar, [:change_title.action, :set_original_title.action]
 
   js_method :on_change_title, <<-JS
