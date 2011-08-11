@@ -38,6 +38,7 @@ Gem::Specification.new do |s|
     "lib/netzke/persistence/configurable.rb",
     "lib/netzke/persistence/configurable/config_window.rb",
     "lib/netzke/persistence/configurable/config_window/javascripts/config_window.js",
+    "lib/netzke/persistence/form_config_pane.rb",
     "lib/netzke/persistence/version.rb",
     "netzke-persistence.gemspec",
     "spec/factories.rb",

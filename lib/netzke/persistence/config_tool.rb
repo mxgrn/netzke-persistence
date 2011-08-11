@@ -16,9 +16,14 @@ module Netzke
 
       js_method :on_gear, <<-JS
         function(){
-          this.parent.loadNetzkeComponent({name: 'configWindow', callback: function(w){
-            w.show();
-          }});
+          if (this.configWindow) {
+            this.configWindow.show();
+          } else {
+            this.parent.loadNetzkeComponent({name: 'config_window', callback: function(w){
+              w.show();
+              this.configWindow = w;
+            }, scope: this});
+          }
         }
       JS
     end

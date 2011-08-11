@@ -1,4 +1,3 @@
-require 'netzke/persistence/configurable/config_window'
 module Netzke
   module Persistence
     module Configurable
