@@ -5,3 +5,4 @@ netzke-core
 netzke-basepack
 extjs
 *.sqlite3
+test/rails_app/tmp

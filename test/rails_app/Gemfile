@@ -1,15 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '3.0.9'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'devise'
 
-gem 'netzke-core'
+gem 'netzke-core',     :path => File.expand_path('../vendor/gems/netzke-core', __FILE__)
+gem 'netzke-basepack', :path => File.expand_path('../vendor/gems/netzke-basepack', __FILE__)
 
 group :development, :test do
   gem 'capybara'
@@ -22,7 +20,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'mysql2'
+  gem 'mysql2', '~> 0.2.0'
 end
 
 group :test do
