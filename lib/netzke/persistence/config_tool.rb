@@ -7,9 +7,12 @@ module Netzke
       js_method :init, <<-JS
         function(cmp){
           this.parent = cmp;
-          if (cmp.mode && cmp.mode.config) {
-            if (!cmp.tools) cmp.tools = [];
-            cmp.tools.push({id: 'gear', handler: this.onGear, scope: this});
+
+          if (!cmp.tools) cmp.tools = [];
+
+          // show the config tool?
+          if (cmp.mode && cmp.mode.config || cmp.configurable) {
+            cmp.tools.push({type: 'gear', handler: this.onGear, scope: this});
           }
         }
       JS

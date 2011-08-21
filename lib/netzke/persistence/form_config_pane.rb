@@ -1,6 +1,7 @@
 module Netzke
   module Persistence
-    # FormPanel-based reusable config pane.
+    # FormPanel-based config pane. Can be used as configuration pane with 'configurable' class method (see +Netzke::Persistence::Configurable+).
+    # The values specified in the fields get merged with persistent default config of the configurable component.
     class FormConfigPane < Netzke::Basepack::FormPanel
       def default_config
         super.tap do |c|
@@ -38,7 +39,6 @@ module Netzke
         }
       JS
 
-      # Overriding the submit endpoint
       endpoint :server_apply_settings do |settings|
         persistence_storage.merge!(settings)
         {:set_result => true}
@@ -46,8 +46,18 @@ module Netzke
 
       # Returns the hash
       def persistence_storage
-        parent.parent.component_session[:default_config] ||= {}
-        parent.parent.component_session[:default_config]
+        owner.component_session[:default_config] ||= {}
+        owner.component_session[:default_config]
+      end
+
+      # Get the owner component, walking up the parent chain until we find the component with the specified owner class
+      def owner
+        return @owner unless @owner.nil? # memoization
+        @owner = parent
+        until @owner.nil? || @owner.class.name == config[:owner_class] do
+          @owner = @owner.parent
+        end
+        @owner
       end
     end
   end

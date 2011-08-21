@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{netzke-persistence}
-  s.version = "0.2.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Sergei Kozlov"]
-  s.date = %q{2011-08-11}
+  s.authors = [%q{Sergei Kozlov}]
+  s.date = %q{2011-08-21}
   s.description = %q{A drop-in gem to enable persistence in Netzke components}
   s.email = %q{sergei@playcode.nl}
   s.extra_rdoc_files = [
@@ -39,6 +39,7 @@ Gem::Specification.new do |s|
     "spec/netzke_component_state_spec.rb",
     "spec/spec_helper.rb",
     "test/rails_app/.gitignore",
+    "test/rails_app/.rvmrc",
     "test/rails_app/Gemfile",
     "test/rails_app/Gemfile.lock",
     "test/rails_app/Rakefile",
@@ -65,7 +66,6 @@ Gem::Specification.new do |s|
     "test/rails_app/app/views/devise/shared/_links.erb",
     "test/rails_app/app/views/devise/unlocks/new.html.erb",
     "test/rails_app/app/views/layouts/application.html.erb",
-    "test/rails_app/app/views/welcome/index.html.erb",
     "test/rails_app/config.ru",
     "test/rails_app/config/application.rb",
     "test/rails_app/config/boot.rb",
@@ -90,7 +90,9 @@ Gem::Specification.new do |s|
     "test/rails_app/db/schema.rb",
     "test/rails_app/db/seeds.rb",
     "test/rails_app/features/component_with_persistence.feature",
+    "test/rails_app/features/configurable.feature",
     "test/rails_app/features/step_definitions/custom_css_steps.rb",
+    "test/rails_app/features/step_definitions/generic_ext_steps.rb",
     "test/rails_app/features/step_definitions/generic_steps.rb",
     "test/rails_app/features/step_definitions/web_steps.rb",
     "test/rails_app/features/support/env.rb",
@@ -121,8 +123,8 @@ Gem::Specification.new do |s|
 ========================================================================
 
 }
-  s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
+  s.require_paths = [%q{lib}]
+  s.rubygems_version = %q{1.8.6}
   s.summary = %q{Persistence subsystem for the Netzke framework}
 
   if s.respond_to? :specification_version then

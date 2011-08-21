@@ -1,4 +1,4 @@
-gem 'rails', '3.0.9'
+gem 'rails', '3.0.10'
 
 gem 'devise'
 
@@ -9,7 +9,7 @@ group :development, :test do
   gem 'capybara'
   gem 'cucumber-rails'
   gem 'cucumber'
-  gem 'rspec-rails', "~> 2.0.0"
+  gem 'rspec-rails'
   gem 'spork'
   gem 'launchy'    # So you can do Then show me the page
   gem 'factory_girl'
