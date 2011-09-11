@@ -20,47 +20,60 @@ module Netzke
         #       :class_name => "Netzke::Persistence::FormConfigPane", :title => "Advanced", :items => [{:name => :collapsed, :attr_type => :boolean}]
         #     }]
         #
-        def configurable(config)
-          config[:in] ||= :tabs
-
-          items = config[:with].size.times.map{ |i| "panel_#{i}" }.map{ |i| i.to_sym.component }
-          components = config[:with].each_with_index.inject({}){ |r,(p,i)| r.merge(:"panel_#{i}" => p.merge(:owner_class => self.name)) }
-
-          # Accordion panes or tabs?
-          case config[:in].to_sym
-          when :accordion
-            component :config_window, {
-              :content_type => :accordion,
-              :class_name => "Netzke::Persistence::Configurable::ConfigWindow",
-              :lazy_loading => true,
-              :width => 500,
-              :layout => :accordion,
-              :layout_config => {:animate => true},
-              :items => items,
-              :components => components
-            }
-          when :tabs
-            component :config_window, {
-              :content_type => :tabs,
-              :class_name => "Netzke::Persistence::Configurable::ConfigWindow",
-              :lazy_loading => true,
-              :width => 500,
-              :layout => :fit,
-              :border => false,
-              :items => [{
-                :class_name => "Netzke::Basepack::TabPanel",
-                :prevent_header => true,
-                :items => items,
-                :components => components
-              }]
-            }
+        def configurable(config = {})
+          if config.empty?
+            @@configurable_config || {}
           else
-            raise ArgumentError, "The 'in' argument should be set to :tabs (default) or :accordion"
+            config[:in] ||= :tabs
+
+            @@configurable_config = config
+
+            items = config[:with].size.times.map{ |i| "panel_#{i}" }.map{ |i| i.to_sym.component }
+
+            define_method :configuration_components do
+              config[:with].each_with_index.inject({}){ |r,(c,i)| r.merge(:"panel_#{i}" => send("#{c}_component")) }
+            end
+
+            # Accordion panes or tabs?
+            case config[:in].to_sym
+            when :accordion
+              component :config_window do
+                {
+                  :content_type => :accordion,
+                  :class_name => "Netzke::Persistence::Configurable::ConfigWindow",
+                  :lazy_loading => true,
+                  :width => 500,
+                  :layout => :accordion,
+                  :layout_config => {:animate => true},
+                  :items => items,
+                  :components => configuration_components
+                }
+              end
+            when :tabs
+              component :config_window do
+                {
+                  :content_type => :tabs,
+                  :class_name => "Netzke::Persistence::Configurable::ConfigWindow",
+                  :lazy_loading => true,
+                  :width => 500,
+                  :layout => :fit,
+                  :border => false,
+                  :items => [{
+                    :class_name => "Netzke::Basepack::TabPanel",
+                    :prevent_header => true,
+                    :items => items,
+                    :components => configuration_components
+                  }]
+                }
+              end
+            else
+              raise ArgumentError, "The 'in' argument should be set to :tabs (default) or :accordion"
+            end
+
+            # Add the "gear" tool
+            plugin :config_tool, :class_name => "Netzke::Persistence::ConfigTool"
+
           end
-
-          # Add the "gear" tool
-          plugin :config_tool, :class_name => "Netzke::Persistence::ConfigTool"
-
         end
       end
     end

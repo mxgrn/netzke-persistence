@@ -1,6 +1,6 @@
 module Netzke
   module Persistence
-    # This is a plugin that displayes the "gear" tool and loads 'config_window'
+    # This is a plugin that displays the "gear" tool and loads 'config_window', when the "configurable" option is set to true
     class ConfigTool < Netzke::Base
       js_base_class "Ext.Component"
 
