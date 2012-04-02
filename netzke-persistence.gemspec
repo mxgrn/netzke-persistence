@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{netzke-persistence}
+  s.name = "netzke-persistence"
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Sergei Kozlov}]
-  s.date = %q{2011-09-11}
-  s.description = %q{A drop-in gem to enable persistence in Netzke components}
-  s.email = %q{sergei@playcode.nl}
+  s.authors = ["Sergei Kozlov"]
+  s.date = "2012-04-02"
+  s.description = "A drop-in gem to enable persistence in Netzke components"
+  s.email = "sergei@playcode.nl"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "lib/generators/netzke/templates/create_netzke_component_states.rb",
     "lib/netzke-persistence.rb",
     "lib/netzke/persistence.rb",
+    "lib/netzke/persistence/config_pane.rb",
     "lib/netzke/persistence/config_tool.rb",
     "lib/netzke/persistence/configurable.rb",
     "lib/netzke/persistence/configurable/config_window.rb",
@@ -109,24 +110,11 @@ Gem::Specification.new do |s|
     "test/persistence_test_app/script/rails",
     "test/persistence_test_app/tmp/restart.txt"
   ]
-  s.homepage = %q{http://netzke.org}
-  s.post_install_message = %q{
-========================================================================
-
-           Thanks for installing netzke-persistence!
-
-  Don't forget to run "rails generate netzke:persistence"
-
-  Netzke home page:     http://netzke.org
-  Netzke Google Groups: http://groups.google.com/group/netzke
-  Netzke tutorials:     http://blog.writelesscode.com
-
-========================================================================
-
-}
-  s.require_paths = [%q{lib}]
-  s.rubygems_version = %q{1.8.6}
-  s.summary = %q{Persistence subsystem for the Netzke framework}
+  s.homepage = "http://netzke.org"
+  s.post_install_message = "\n========================================================================\n\n           Thanks for installing netzke-persistence!\n\n  Don't forget to run \"rails generate netzke:persistence\"\n\n  Netzke home page:     http://netzke.org\n  Netzke Google Groups: http://groups.google.com/group/netzke\n  Netzke tutorials:     http://blog.writelesscode.com\n\n========================================================================\n\n"
+  s.require_paths = ["lib"]
+  s.rubygems_version = "1.8.10"
+  s.summary = "Persistence subsystem for the Netzke framework"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
