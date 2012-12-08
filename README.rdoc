@@ -1,55 +1,7 @@
 = netzke-persistence
 
-Enables persistence in Netzke components.
-
-The following components currently support persistence:
-* Basepack::BorderLayoutPanel - remembers its region sizes, as well as collapsed/expanded states
-
-In the works:
-* Basepack::Window - remembers its dimensions and position
-* Basepack::GridPanel - remembers:
-  * columns sizes, order, and hidden/shown state
-  * presets for advanced search
-* Basepack::TabPanel - remembers its last active tab
-* Basepack::AccordionPanel - remembers its panels states
-* Basepack::BasicApp - remembers its last loaded component
-
-== Installation
-
-In your Gemfile:
-
-    gem 'netzke-persistence'
-
-From your app directory run:
-
-    rails generate netzke:persistence && rake db:migrate
-
-== Usage
-
-To enable persistence for a specific component, set its +persistence+ configuration option to +true+, e.g.:
-
-    <%= netzke :my_component, :persistence => true %>
-
-Component developers may refer to http://api.netzke.org/core/Netzke/State.html. For an example, see ComponentWithPersistence in test/rails_app/app/components.
-
-== Running tests
-
-Symlink the Ext JS library into the test app, e.g. (depends on where your Ext JS is located):
-
-    ln -s ~/code/sencha/ext-3.3.0 test/rails_app/public/extjs
-
-Run bundle install from inside the test app:
-
-    cd test/rails_app && bundle install && cd -
-
-Running cucumber tests:
-
-    cucumber features
-
-RSpec tests:
-
-    rspec spec
+Development of netzke-persistence has been suspended and its functionality by bigger part became obsolete. Currently, Netzke Core implements the default state management using sessions, which is good enough for many use cases. The future (vague) plans for this gem are to enable user/role-based persistence for Netzke components.
 
 ---
 
-Copyright (c) 2008-2010 Sergei Kozlov, released under the MIT license
+Copyright (c) 2009-2010 nomadcoder, released under the MIT license
